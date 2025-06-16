@@ -44,8 +44,7 @@ public class GameBoard {
             return;
         }
 
-//        openSurroundedCells(cellPosition);
-        openSurroundedCells2(cellPosition);
+        openSurroundedCells(cellPosition);
         checkIfGameIsOver();
     }
 
@@ -140,24 +139,6 @@ public class GameBoard {
     }
 
     private void openSurroundedCells(CellPosition cellPosition) {
-        if (isOpenedCell(cellPosition)) {
-            return;
-        }
-        if (isLandMineCellAt(cellPosition)) {
-            return;
-        }
-
-        openOneCellAt(cellPosition);
-
-        if (doesCellHaveLandMineCount(cellPosition)) {
-            return;
-        }
-
-        List<CellPosition> surroundedPositions = calculateSurroundedPositions(cellPosition, getRowSize(), getColSize());
-        surroundedPositions.forEach(this::openSurroundedCells);
-    }
-
-    private void openSurroundedCells2(CellPosition cellPosition) {
         Stack<CellPosition> stack = new Stack<>();
         stack.add(cellPosition);
 
