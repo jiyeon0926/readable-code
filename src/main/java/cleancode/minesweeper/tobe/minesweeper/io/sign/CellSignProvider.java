@@ -36,8 +36,7 @@ public enum CellSignProvider implements CellSignProvidable {
         public String provide(CellSnapshot cellSnapshot) {
             return UNCHECKED_SIGN;
         }
-    }
-    ;
+    };
 
     private static final String EMPTY_SIGN = "■";
     private static final String LAND_MINE_SIGN = "☼";
@@ -62,8 +61,8 @@ public enum CellSignProvider implements CellSignProvidable {
 
     private static CellSignProvider findBy(CellSnapshot snapshot) {
         return Arrays.stream(values())
-                .filter(provider -> provider.supports(snapshot))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("확인할 수 없는 셀입니다."));
+            .filter(provider -> provider.supports(snapshot))
+            .findFirst()
+            .orElseThrow(() -> new IllegalArgumentException("확인할 수 없는 셀입니다."));
     }
 }

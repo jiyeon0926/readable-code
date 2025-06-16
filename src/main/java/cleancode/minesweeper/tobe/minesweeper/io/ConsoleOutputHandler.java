@@ -70,9 +70,9 @@ public class ConsoleOutputHandler implements OutputHandler {
 
     private String generateColAlphabets(GameBoard board) {
         List<String> alphabets = IntStream.range(0, board.getColSize())
-                .mapToObj(index -> (char) ('a' + index))
-                .map(Object::toString)
-                .toList();
+            .mapToObj(index -> (char) ('a' + index))
+            .map(Object::toString)
+            .toList();
         return String.join(" ", alphabets);
     }
 }

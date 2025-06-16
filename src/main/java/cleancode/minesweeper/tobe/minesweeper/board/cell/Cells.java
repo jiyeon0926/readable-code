@@ -17,13 +17,13 @@ public class Cells {
 
     public static Cells from(Cell[][] cells) {
         List<Cell> cellList = Arrays.stream(cells)
-                .flatMap(Arrays::stream)
-                .toList();
+            .flatMap(Arrays::stream)
+            .toList();
         return of(cellList);
     }
 
     public boolean isAllChecked() {
         return cells.stream()
-                .allMatch(Cell::isChecked);
+            .allMatch(Cell::isChecked);
     }
 }

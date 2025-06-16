@@ -43,8 +43,8 @@ public class CellPositions {
         CellPositions positionsToSubtract = CellPositions.of(positionListToSubtract);
 
         return cellPositions.stream()
-                .filter(positionsToSubtract::doesNotContain)
-                .toList();
+            .filter(positionsToSubtract::doesNotContain)
+            .toList();
     }
 
     public List<CellPosition> getPositions() {
