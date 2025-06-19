@@ -1,6 +1,7 @@
 package cleancode.studycafe.tobe;
 
 import cleancode.studycafe.tobe.config.StudyCafeConfig;
+import cleancode.studycafe.tobe.config.StudyCafeRunable;
 import cleancode.studycafe.tobe.exception.AppException;
 import cleancode.studycafe.tobe.io.InputHandler;
 import cleancode.studycafe.tobe.io.OutputHandler;
@@ -11,7 +12,7 @@ import cleancode.studycafe.tobe.model.StudyCafePassType;
 
 import java.util.List;
 
-public class StudyCafePassMachine {
+public class StudyCafePassMachine implements StudyCafeRunable {
 
     private final InputHandler inputHandler;
     private final OutputHandler outputHandler;
@@ -21,6 +22,7 @@ public class StudyCafePassMachine {
         this.outputHandler = studyCafeConfig.getOutputHandler();
     }
 
+    @Override
     public void run() {
         try {
             outputHandler.showWelcomeMessage();
